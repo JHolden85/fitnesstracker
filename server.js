@@ -1,9 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-
-const PORT = 3000;
-
+const PORT = 3001;
 const app = express();
 
 app.use(logger("dev"));
@@ -15,7 +13,6 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://localhost/workout");
 
-// routes
 app.use(require("./routes/api.js"));
 app.use(require("./routes/view.js"));
 
